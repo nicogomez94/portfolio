@@ -87,14 +87,100 @@
 
         <section id="experience">
             <h2>Where I've Worked</h2>
-             <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula.</p>
-             <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi.</p>
+            <div class="experience-tabs">
+                <div class="tab-list" role="tablist" aria-label="Job tabs">
+                    <button id="tab-0" role="tab" aria-selected="false" aria-controls="panel-0" tabindex="-1" class="tab-button">
+                        <span>Upwork and Fiverr</span>
+                    </button>
+                    <button id="tab-1" role="tab" aria-selected="true" aria-controls="panel-1" tabindex="0" class="tab-button active">
+                        <span>Geedesk Technologies Inc.</span>
+                    </button>
+                    <div class="tab-highlight"></div>
+                </div>
+
+                <div class="tab-panels">
+                    <div id="panel-0" role="tabpanel" tabindex="0" aria-labelledby="tab-0" class="tab-panel" hidden>
+                        <h3><span>Freelance Developer</span> <span class="company">@ Upwork & Fiverr</span></h3>
+                        <p class="date">Date Range Placeholder</p>
+                        <ul>
+                            <li>Responsibility or achievement placeholder 1.</li>
+                            <li>Responsibility or achievement placeholder 2.</li>
+                        </ul>
+                    </div>
+                    <div id="panel-1" role="tabpanel" tabindex="0" aria-labelledby="tab-1" class="tab-panel active">
+                        <h3><span>Software Engineer Intern</span> <span class="company">@ Geedesk Technologies Inc.</span></h3>
+                        <p class="date">Feb 2021 — Ongoing</p>
+                        <ul>
+                            <li>Communication with stakeholders using Figma as a prototyping tool and then making XML in android for that mockups</li>
+                            <li>Making requests to the server using Retrofit as OKHttp library for REST API request with coroutines for synchronous coding</li>
+                            <li>Fixed issue-related memory leak and using Model-View-View-Model Architecture to separate the logic from UI.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section id="work">
-             <h2>Some Things I've Built</h2>
-             <p>Pellentesque in ipsum id orci porta dapibus. Sed porttitor lectus nibh. Curabitur aliquet quam id dui posuere blandit.</p>
-             <p>Nulla porttitor accumsan tincidunt. Cras ultricies ligula sed magna dictum porta. Proin eget tortor risus.</p>
+            <h2>Some Things I've Built</h2>
+  
+            <ul class="featured-projects-list">
+                <li class="project">
+                    <div class="project-content">
+                        <div>
+                            <p class="project-overline">Featured Project</p>
+                            <h3 class="project-title"><a href="#">AssignmentHub</a></h3>
+                            <div class="project-description">
+                                <p>AssignmentHub is a assignment manager android application to help teachers to mange assignments in University, built with use of modern android development tools. Got runner up position in AWS Amplify hackthon on Hashnode.</p>
+                            </div>
+                            <ul class="project-tech-list">
+                                <li>Kotlin</li>
+                                <li>Android</li>
+                                <li>AWS Amplify</li>
+                            </ul>
+                            <div class="project-links">
+                                <a href="#" aria-label="GitHub Link" target="_blank" rel="noopener noreferrer">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" width="22" height="22"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+                                </a>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="project-image">
+                         <a href="#">
+                            <img src="img/pngtree-beige-pastel-wave-swirls-abstract-seamless-pattern-picture-image_13491194.jpg" alt="AssignmentHub Screenshot">
+                         </a>
+                    </div>
+                </li>
+  
+                <li class="project">
+                    <div class="project-content">
+                        <div>
+                            <p class="project-overline">Featured Project</p>
+                            <h3 class="project-title"><a href="#">Quiz App</a></h3>
+                            <div class="project-description">
+                                <p>A Quiz Android application built using Java and showing best practices of Room.</p>
+                            </div>
+                            <ul class="project-tech-list">
+                                <li>Java</li>
+                                <li>Android</li>
+                                <li>Room</li>
+                            </ul>
+                            <div class="project-links">
+                                <a href="#" aria-label="GitHub Link" target="_blank" rel="noopener noreferrer">
+                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" width="22" height="22"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-image">
+                        <a href="#">
+                            <img src="img/pngtree-beige-pastel-wave-swirls-abstract-seamless-pattern-picture-image_13491194.jpg" alt="Quiz App Screenshot">
+                        </a>
+                    </div>
+                </li>
+  
+            </ul>
+            <hr>
+            <a href="mailto:sagarkhurana@gmail.com" class="button contact-button" style="margin-top: 20px;">Ver mas</a>
         </section>
 
         <section id="contact">
@@ -105,6 +191,76 @@
         </section>
 
     </main>
+
+    <script>
+        const tabs = document.querySelectorAll('.tab-button');
+        const panels = document.querySelectorAll('.tab-panel');
+        const tabList = document.querySelector('.tab-list');
+        const highlight = document.querySelector('.tab-highlight'); // Selecciona la barra
+    
+        // Función para mover el highlight (si existe)
+        const moveHighlight = (activeIndex) => {
+            if (highlight) {
+                const tabHeight = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--tab-height') || '42px');
+                highlight.style.transform = `translateY(${activeIndex * tabHeight}px)`;
+            }
+        };
+    
+        // Mueve el highlight a la posición inicial activa
+        const initialActiveIndex = Array.from(tabs).findIndex(tab => tab.classList.contains('active'));
+        if (initialActiveIndex !== -1) {
+            moveHighlight(initialActiveIndex);
+        }
+    
+    
+        tabs.forEach((tab, index) => {
+            tab.addEventListener('click', () => {
+                // 1. Desactivar todos los tabs y paneles
+                tabs.forEach(t => {
+                    t.classList.remove('active');
+                    t.setAttribute('aria-selected', 'false');
+                    t.setAttribute('tabindex', '-1'); // No enfocable por defecto
+                });
+                panels.forEach(p => {
+                    p.classList.remove('active');
+                    p.hidden = true;
+                });
+    
+                // 2. Activar el tab clickeado y su panel correspondiente
+                tab.classList.add('active');
+                tab.setAttribute('aria-selected', 'true');
+                tab.setAttribute('tabindex', '0'); // Enfocable
+                const panelId = tab.getAttribute('aria-controls');
+                const correspondingPanel = document.getElementById(panelId);
+                if (correspondingPanel) {
+                    correspondingPanel.classList.add('active');
+                    correspondingPanel.hidden = false;
+                }
+    
+                 // 3. Mover el highlight
+                 moveHighlight(index);
+    
+                 tab.focus(); // Opcional: Mover el foco al tab activo
+            });
+    
+             // Permitir navegación con teclado (básico)
+             tab.addEventListener('keydown', (e) => {
+                 let newIndex = index;
+                 if (e.key === 'ArrowDown') {
+                     newIndex = (index + 1) % tabs.length;
+                 } else if (e.key === 'ArrowUp') {
+                     newIndex = (index - 1 + tabs.length) % tabs.length;
+                 }
+    
+                 if (newIndex !== index) {
+                     tabs[newIndex].focus(); // Mueve el foco, el click handler se activará si presionan Enter/Space
+                     // Podríamos activar directamente el tab aquí también
+                     // tabs[newIndex].click();
+                 }
+             });
+    
+        });
+    </script>
 
 </body>
 </html>

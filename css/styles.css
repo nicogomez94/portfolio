@@ -430,6 +430,433 @@ section h2::before {
  }
 
 
+** --- Estilos para la Sección Experience --- **
+
+ #experience {
+    max-width: 750px; /* Un poco más de ancho */
+    min-height: 340px; /* Altura mínima para evitar colapso */
+}
+
+.experience-tabs {
+    display: flex;
+    gap: 30px; /* Aumenta el espacio entre lista y panel */
+    position: relative;
+}
+
+.tab-list {
+    position: relative;
+    /* width: max-content; */ /* Quitado para que sea más flexible */
+    min-width: 180px; /* Ancho mínimo fijo más grande */
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+     flex-shrink: 0; /* Evita que la lista se encoja */
+}
+
+.tab-button {
+    display: inline-flex;
+    align-items: center;
+    width: 100%;
+    background-color: transparent;
+    color: var(--slate);
+    font-family: var(--font-mono);
+    font-size: var(--fz-xs);
+    text-align: left;
+    white-space: nowrap;
+    border: none;
+    border-left: 2px solid var(--lightest-navy);
+    padding: 13px 20px; /* Ajustado padding */
+    cursor: pointer;
+    transition: var(--transition);
+    height: var(--tab-height, 42px); /* Asegura altura constante */
+}
+.tab-button:hover,
+.tab-button:focus {
+     background-color: var(--light-navy);
+     color: var(--green);
+     outline: none;
+}
+.tab-button.active {
+     color: var(--green);
+     background-color: var(--light-navy);
+     font-weight: 500;
+     border-left-color: var(--green); /* Cambia el borde izquierdo directamente */
+}
+ /* Ocultar el highlight bar ya que su movimiento perfecto requiere JS */
+ /* Si quieres mantenerlo estático, puedes descomentar y ajustar */
+.tab-highlight {
+    position: absolute;
+     top: 0; /* Posición inicial */
+     left: -2px; /* Alineado con el borde */
+     z-index: 10;
+     width: 2px;
+     height: var(--tab-height, 42px);
+     border-radius: var(--border-radius);
+     background: var(--green);
+     transition: transform 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+     transition-delay: 0.1s;
+     /* El JS ajustará este transform */
+     transform: translateY(0px); /* Inicialmente en la primera posición */
+}
+
+
+.tab-panels {
+    flex-grow: 1; /* Ocupa el espacio restante */
+    /* padding-left: 10px; */ /* Quitado, usa el gap del flex container */
+    width: 100%; /* Asegura que ocupe el espacio */
+    min-width: 0; /* Permite que se encoja si es necesario */
+}
+
+.tab-panel {
+    display: none; /* Oculto por defecto */
+    padding: 5px;
+    width: 100%;
+    height: 100%;
+}
+.tab-panel.active {
+    display: block; /* Visible si está activo */
+}
+
+.tab-panel h3 {
+    color: var(--lightest-slate);
+    font-size: var(--fz-xxl);
+    font-weight: 500;
+    line-height: 1.3;
+    margin-bottom: 5px;
+}
+.tab-panel h3 .company {
+    color: var(--green);
+}
+ /* Corregido selector para el '@' */
+ .tab-panel h3 .company::before {
+     content: " @ "; /* Espacios alrededor del @ */
+     /* color: var(--green); */ /* Quitado, hereda color de .company */
+ }
+
+.tab-panel p.date {
+    font-family: var(--font-mono);
+    font-size: var(--fz-xs);
+    color: var(--light-slate);
+    margin-bottom: 25px;
+}
+
+.tab-panel ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    font-size: var(--fz-lg);
+}
+.tab-panel ul li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 10px;
+    color: var(--slate);
+}
+.tab-panel ul li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    top: 3px;
+    color: var(--green);
+}
+
+/* --- Ajustes Responsivos para la Sección work --- */
+#work {
+    max-width: 1000px; /* Ajusta según necesites */
+}
+
+.featured-projects-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.project {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(12, 1fr);
+    align-items: center;
+    margin-bottom: 100px;
+}
+
+.project:last-of-type {
+     margin-bottom: 70px;
+}
+
+.project-content {
+    position: relative;
+    grid-column: 1 / 8; /* Por defecto a la izquierda */
+    grid-row: 1 / -1;
+    text-align: left;
+    z-index: 2; /* Contenido encima de la imagen */
+}
+
+.project:nth-of-type(odd) .project-content {
+    grid-column: 7 / -1; /* Texto a la derecha para impares */
+    text-align: right;
+}
+
+.project-overline {
+    margin: 10px 0;
+    color: var(--green);
+    font-family: var(--font-mono);
+    font-size: var(--fz-xs);
+    font-weight: 400;
+}
+
+.project-title {
+    color: var(--lightest-slate);
+    font-size: clamp(24px, 5vw, 28px);
+    margin: 0 0 20px;
+}
+.project-title a {
+     color: var(--lightest-slate);
+     text-decoration: none;
+}
+  .project-title a:hover {
+       color: var(--green);
+  }
+
+
+.project-description {
+    background-color: var(--light-navy);
+    color: var(--light-slate);
+    padding: 25px;
+    border-radius: var(--border-radius);
+    font-size: var(--fz-lg);
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 10px 30px -15px rgba(2,12,27,0.7);
+    transition: var(--transition);
+}
+.project-description:hover {
+    box-shadow: 0 20px 30px -15px rgba(2,12,27,0.7);
+}
+.project-description p {
+    margin: 0;
+}
+ .project-description a {
+      display: inline-block;
+      text-decoration: none;
+      text-decoration-skip-ink: auto;
+      position: relative;
+      transition: var(--transition);
+      color: var(--green);
+ }
+
+
+.project-tech-list {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 2;
+    margin: 25px 0 10px;
+    padding: 0;
+    list-style: none;
+}
+
+.project:nth-of-type(odd) .project-tech-list {
+     justify-content: flex-end; /* Alinea a la derecha para impares */
+}
+
+.project-tech-list li {
+    margin: 0 20px 5px 0;
+    color: var(--light-slate);
+    font-family: var(--font-mono);
+    font-size: var(--fz-xs);
+    white-space: nowrap;
+}
+.project:nth-of-type(odd) .project-tech-list li {
+     margin: 0 0 5px 20px; /* Invierte margen para alineación derecha */
+}
+
+
+.project-links {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-top: 10px;
+    margin-left: -10px;
+    color: var(--lightest-slate);
+}
+.project:nth-of-type(odd) .project-links {
+    justify-content: flex-end;
+    margin-left: 0;
+    margin-right: -10px;
+}
+.project-links a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+ .project-links a svg {
+      width: 22px;
+      height: 22px;
+      fill: var(--light-slate);
+      transition: var(--transition);
+ }
+  .project-links a:hover svg {
+       fill: var(--green);
+  }
+
+.project-image {
+    grid-column: 6 / -1; /* Por defecto a la derecha */
+    grid-row: 1 / -1;
+    position: relative;
+    z-index: 1; /* Imagen detrás del contenido */
+    transition: var(--transition);
+    border-radius: var(--border-radius);
+}
+
+.project:nth-of-type(odd) .project-image {
+     grid-column: 1 / 8; /* Imagen a la izquierda para impares */
+}
+
+ .project-image a {
+      width: 100%;
+      background-color: var(--green);
+      border-radius: var(--border-radius);
+      vertical-align: middle;
+ }
+  .project-image a::before {
+       content: '';
+       position: absolute;
+       width: 100%;
+       height: 100%;
+       top: 0;
+       left: 0;
+       right: 0;
+       bottom: 0;
+       z-index: 3;
+       transition: var(--transition);
+       background-color: var(--navy);
+       mix-blend-mode: screen;
+       border-radius: var(--border-radius);
+  }
+   .project-image a:hover::before {
+        background-color: transparent;
+        filter: none;
+   }
+
+
+ .project-image img {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      position: relative;
+      border-radius: var(--border-radius);
+      mix-blend-mode: multiply;
+      filter: grayscale(100%) contrast(1) brightness(80%);
+      transition: var(--transition);
+      object-fit: cover; /* Ajusta la imagen */
+ }
+  .project-image a:hover img {
+       filter: none;
+       mix-blend-mode: normal;
+  }
+
+/* --- Ajustes Responsivos para Work --- */
+  @media (max-width: 768px) {
+      .project {
+          display: block; /* Apila elementos */
+          margin-bottom: 70px;
+      }
+      .project-content,
+      .project:nth-of-type(odd) .project-content {
+           grid-column: 1 / -1; /* Ocupa todo el ancho */
+           padding: 40px 40px 30px;
+           text-align: left;
+           z-index: 5; /* Asegura que esté encima en móvil */
+           position: relative; /* Quita posicionamiento grid */
+      }
+      .project-image,
+      .project:nth-of-type(odd) .project-image {
+           grid-column: 1 / -1;
+           height: 100%;
+           opacity: 0.25; /* Imagen de fondo más tenue */
+           position: absolute; /* Posiciona detrás del texto */
+           top: 0;
+           left: 0;
+           right: 0;
+           bottom: 0;
+           border-radius: 0; /* Sin bordes redondeados en fondo */
+      }
+       .project-image img {
+           object-fit: cover; /* Asegura que cubra */
+           height: 100%;
+       }
+
+       .project-description {
+           background-color: transparent;
+           padding: 0;
+           box-shadow: none;
+       }
+       .project-description:hover {
+           box-shadow: none;
+       }
+       .project-tech-list,
+       .project:nth-of-type(odd) .project-tech-list {
+            justify-content: flex-start; /* Siempre a la izquierda */
+       }
+       .project-tech-list li,
+       .project:nth-of-type(odd) .project-tech-list li {
+            margin: 0 10px 5px 0; /* Ajusta margen */
+       }
+        .project-links,
+        .project:nth-of-type(odd) .project-links {
+            justify-content: flex-start; /* Siempre a la izquierda */
+            margin-left: -10px;
+            margin-right: 0;
+        }
+
+  }
+   @media (max-width: 480px) {
+        .project-content { padding: 25px 25px 20px; }
+        .project-tech-list li { font-size: var(--fz-xxs); margin-right: 5px;}
+   }
+
+/* --- Ajustes Responsivos para Experience (Revisados) --- */
+@media (max-width: 600px) {
+    .experience-tabs {
+        display: block; /* Cambia a bloque */
+        gap: 0; /* Sin gap en móvil */
+    }
+    .tab-list {
+        position: relative;
+        display: flex;
+        flex-direction: row; /* Fila horizontal */
+        overflow-x: auto; /* Scroll horizontal si no caben */
+        width: 100%;
+        margin-bottom: 30px;
+        border-bottom: 1px solid var(--lightest-navy);
+         min-width: auto; /* Ancho automático */
+         flex-shrink: 1; /* Permite encogerse */
+    }
+    .tab-button {
+        padding: 10px 15px;
+        border-left: none; /* Sin borde izquierdo */
+        border-bottom: 2px solid transparent; /* Borde inferior para highlight */
+        min-width: 120px; /* Ancho mínimo por tab */
+        text-align: center; /* Centra el texto */
+        white-space: nowrap; /* Evita salto de línea */
+    }
+    .tab-button.active {
+         border-bottom-color: var(--green); /* Highlight en borde inferior */
+         border-left-color: transparent; /* Asegura sin borde izquierdo */
+    }
+    .tab-highlight {
+         display: none; /* Oculta la barra vertical */
+    }
+    .tab-panels {
+        padding-left: 0;
+    }
+}
+
+
 /* --- Ajustes Responsivos para About --- */
 @media (max-width: 768px) {
     #about .about-content {
