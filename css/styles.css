@@ -131,9 +131,39 @@ header {
     align-items: center;
 }
 
+nav ol {
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+
+nav ol li {
+    margin: 0 15px;
+    font-family: var(--font-mono);
+    font-size: var(--fz-xs);
+}
+
+nav ol li a {
+    color: var(--lightest-slate);
+    counter-increment: item 1;
+    padding: 10px;
+}
+
+nav ol li a::before {
+    content: '0' counter(item) '.';
+    margin-right: 5px;
+    color: var(--green);
+    font-size: var(--fz-xs);
+}
+ nav ol li a:hover {
+    color: var(--green);
+ }
+
 .mobile-nav-button-container {
     display: none;
-    align-items: center;
+    position: fixed;
+    top: 15px;
+    right: 25px;
     z-index: 12;
 }
 
@@ -151,12 +181,10 @@ header {
     border: 0;
     margin: 0;
     overflow: visible;
+    position: relative;
     z-index: 12;
 }
 .hamburger-button:hover {
-    opacity: 0.7;
-}
-.hamburger-button.is-active:hover {
     opacity: 0.7;
 }
 
@@ -199,20 +227,35 @@ header {
     transition: bottom 0.1s 0.25s ease-in, transform 0.22s var(--mobile-menu-easing);
 }
 
-.hamburger-button.is-active .hamburger-inner {
-    transform: rotate(225deg);
-    transition-delay: 0.12s;
-    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+/* Opcional: Ocultar botón hamburguesa cuando el menú está abierto */
+body.menu-open .mobile-nav-button-container {
+    opacity: 0.5;
+    pointer-events: none;
 }
-.hamburger-button.is-active .hamburger-inner::before {
-    top: 0;
-    opacity: 0;
-    transition: top 0.1s ease-out, opacity 0.1s 0.12s ease-out;
+
+/* --- Estilos Botón de Cierre (Nuevo) --- */
+.close-menu-button {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    padding: 10px;
+    background-color: transparent;
+    border: none;
+    color: var(--green);
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 1;
+    cursor: pointer;
+    z-index: 12;
+    transition: var(--transition);
 }
-.hamburger-button.is-active .hamburger-inner::after {
-    bottom: 0;
-    transform: rotate(-90deg);
-    transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+.close-menu-button:hover {
+    color: var(--white);
+    opacity: 0.8;
+}
+.close-menu-button span {
+    display: block;
+    transform: translateY(-2px);
 }
 
 .mobile-menu {
@@ -224,7 +267,7 @@ header {
     height: 100vh;
     background-color: var(--light-navy);
     z-index: 11;
-    padding: 50px 10px;
+    padding: 3rem 1.5rem 2rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -243,52 +286,50 @@ header {
 }
 
 .mobile-menu nav {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
     text-align: center;
     width: 100%;
     height: 100%;
+    overflow-y: auto;
 }
 
-.mobile-menu nav ol {
+.mobile-menu nav ul {
+    display: block !important;
     list-style: none;
     padding: 0;
-    margin: 0 0 3rem 0;
+    margin: 0;
     width: 100%;
 }
 
-.mobile-menu nav ol li {
+.mobile-menu nav ul li {
     position: relative;
-    margin: 0 auto 20px;
-    counter-increment: item 1;
-    font-size: clamp(var(--fz-sm), 4vw, var(--fz-lg));
+    margin: 0 auto 2rem;
+    width: 100%;
 }
-.mobile-menu nav ol li::before {
-    display: block;
-    content: '0' counter(item) '.';
-    color: var(--green);
-    font-size: var(--fz-sm);
-    margin-bottom: 5px;
+.mobile-menu nav ul li:last-child {
+    margin-bottom: 0;
 }
 
-.mobile-menu nav ol li a {
-    font-family: var(--font-mono);
-    padding: 3px 20px 20px;
-    width: 100%;
+.mobile-menu nav ul li a {
+    display: block;
+    font-family: var(--font-sans);
+    font-size: var(--fz-lg);
+    font-weight: 600;
+    padding: 0.25rem 0;
     color: var(--lightest-slate);
     text-decoration: none;
+    width: 100%;
+    transition: var(--transition);
 }
-.mobile-menu nav ol li a:hover,
-.mobile-menu nav ol li a:focus {
+.mobile-menu nav ul li a:hover,
+.mobile-menu nav ul li a:focus {
     color: var(--green);
 }
 
 .mobile-menu .resume-button {
-    padding: 18px 50px;
-    margin: 10px auto 0;
+    padding: 1rem 2.5rem;
+    margin: 3rem auto 0;
     width: max-content;
+    font-size: var(--fz-sm);
 }
 
 .logo a {
@@ -302,33 +343,7 @@ header {
     display: inline-block;
 }
 
-nav ol {
-    display: flex;
-    align-items: center;
-    list-style: none;
-}
 
-nav ol li {
-    margin: 0 15px;
-    font-family: var(--font-mono);
-    font-size: var(--fz-xs);
-}
-
-nav ol li a {
-    color: var(--lightest-slate);
-    counter-increment: item 1;
-    padding: 10px;
-}
-
-nav ol li a::before {
-    content: '0' counter(item) '.';
-    margin-right: 5px;
-    color: var(--green);
-    font-size: var(--fz-xs);
-}
- nav ol li a:hover {
-    color: var(--green);
- }
 
 .resume-button {
     margin-left: 20px;
@@ -1165,7 +1180,7 @@ section h2::before {
         display: none;
     }
     .mobile-nav-button-container {
-        display: flex;
+        display: block;
     }
 }
 

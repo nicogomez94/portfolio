@@ -36,13 +36,15 @@
     </header>
     
     <aside id="mobile-menu" class="mobile-menu" tabindex="-1" aria-labelledby="mobile-menu-title" hidden>
+        <button class="close-menu-button" aria-label="Close menu">
+            <span>&times;</span> </button>
         <nav>
-             <ol>
+             <ul>
                 <li><a href="#about">About</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#work">Work</a></li>
                 <li><a href="#contact">Contact</a></li>
-            </ol>
+             </ul>
             <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" class="button resume-button">Resume</a>
         </nav>
     </aside>
@@ -284,51 +286,63 @@
     </script>
 
 <script>
-    const menuButton = document.querySelector('.hamburger-button');
+    const hamburgerButton = document.querySelector('.hamburger-button');
+    const closeButton = document.querySelector('.close-menu-button');
     const mobileMenu = document.querySelector('#mobile-menu');
-    const menuLinks = document.querySelectorAll('#mobile-menu nav a'); // Incluye links y botón resume
+    const menuLinks = document.querySelectorAll('#mobile-menu nav a'); // Enlaces y botón Resume
 
-    const toggleMenu = () => {
-        const isMenuOpen = menuButton.classList.contains('is-active');
-        menuButton.classList.toggle('is-active');
-        menuButton.setAttribute('aria-expanded', !isMenuOpen);
+    const openMenu = () => {
+        if (mobileMenu.hidden) { // Solo abre si está cerrado
+            hamburgerButton.setAttribute('aria-expanded', 'true');
+            // hamburgerButton.classList.add('is-active'); // Ya no es necesario para la 'X'
 
-        mobileMenu.classList.toggle('is-open');
-        mobileMenu.hidden = !mobileMenu.hidden;
+            mobileMenu.hidden = false;
+            // Forzar reflow para asegurar que la transición funcione al quitar 'hidden'
+            // void mobileMenu.offsetWidth; // Descomentar si la animación no funciona bien
+            mobileMenu.classList.add('is-open');
 
-        if (!isMenuOpen) {
             document.body.classList.add('menu-open');
-             mobileMenu.focus(); // Enfoca el menú para accesibilidad
-        } else {
-            document.body.classList.remove('menu-open');
+            // Enfocar el botón de cerrar o el menú para accesibilidad
+            closeButton.focus();
         }
     };
 
-    // Abrir/cerrar con el botón
-    menuButton.addEventListener('click', toggleMenu);
+    const closeMenu = () => {
+        if (!mobileMenu.hidden) { // Solo cierra si está abierto
+            hamburgerButton.setAttribute('aria-expanded', 'false');
+            // hamburgerButton.classList.remove('is-active'); // Ya no es necesario
 
-    // Cerrar el menú al hacer clic en un enlace o el botón Resume
+            mobileMenu.classList.remove('is-open');
+            // Espera que termine la transición antes de ocultar con 'hidden'
+             mobileMenu.addEventListener('transitionend', () => {
+                 mobileMenu.hidden = true;
+             }, { once: true }); // Asegura que el listener se ejecute solo una vez
+
+            document.body.classList.remove('menu-open');
+            // Devolver foco al botón que abrió el menú
+             hamburgerButton.focus();
+        }
+    };
+
+    // --- Event Listeners ---
+
+    // Botón Hamburguesa: Solo abre
+    hamburgerButton.addEventListener('click', openMenu);
+
+    // Botón Cerrar ('X'): Solo cierra
+    closeButton.addEventListener('click', closeMenu);
+
+    // Enlaces dentro del menú: Cierran el menú
     menuLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            if (mobileMenu.classList.contains('is-open')) {
-                toggleMenu();
-            }
-        });
+        link.addEventListener('click', closeMenu);
     });
 
-    // Cerrar el menú con la tecla Escape
+    // Tecla Escape: Cierra el menú
     document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && mobileMenu.classList.contains('is-open')) {
-            toggleMenu();
+        if (e.key === 'Escape' && !mobileMenu.hidden) {
+            closeMenu();
         }
     });
-
-    // Cerrar menú si se hace clic fuera (opcional)
-    // mobileMenu.addEventListener('click', (e) => {
-    //    if (e.target === mobileMenu) { // Si se hace clic en el fondo del menú (aside)
-    //       toggleMenu();
-    //    }
-    // });
 
 </script>
 
