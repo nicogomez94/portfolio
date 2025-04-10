@@ -15,16 +15,37 @@
         <div class="logo">
             <a href="#hero">S</a>
         </div>
-        <nav>
+    
+        <nav class="desktop-nav"> 
             <ol>
                 <li><a href="#about">About</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#work">Work</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ol>
-             <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" class="button resume-button">Resume</a>
+            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" class="button resume-button">Resume</a>
         </nav>
+    
+        <div class="mobile-nav-button-container">
+            <button class="hamburger-button" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
+                <div class="hamburger-box">
+                    <div class="hamburger-inner"></div>
+                </div>
+            </button>
+        </div>
     </header>
+    
+    <aside id="mobile-menu" class="mobile-menu" tabindex="-1" aria-labelledby="mobile-menu-title" hidden>
+        <nav>
+             <ol>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#work">Work</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ol>
+            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" class="button resume-button">Resume</a>
+        </nav>
+    </aside>
 
     <aside class="side left">
         <ul>
@@ -261,6 +282,55 @@
     
         });
     </script>
+
+<script>
+    const menuButton = document.querySelector('.hamburger-button');
+    const mobileMenu = document.querySelector('#mobile-menu');
+    const menuLinks = document.querySelectorAll('#mobile-menu nav a'); // Incluye links y botón resume
+
+    const toggleMenu = () => {
+        const isMenuOpen = menuButton.classList.contains('is-active');
+        menuButton.classList.toggle('is-active');
+        menuButton.setAttribute('aria-expanded', !isMenuOpen);
+
+        mobileMenu.classList.toggle('is-open');
+        mobileMenu.hidden = !mobileMenu.hidden;
+
+        if (!isMenuOpen) {
+            document.body.classList.add('menu-open');
+             mobileMenu.focus(); // Enfoca el menú para accesibilidad
+        } else {
+            document.body.classList.remove('menu-open');
+        }
+    };
+
+    // Abrir/cerrar con el botón
+    menuButton.addEventListener('click', toggleMenu);
+
+    // Cerrar el menú al hacer clic en un enlace o el botón Resume
+    menuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (mobileMenu.classList.contains('is-open')) {
+                toggleMenu();
+            }
+        });
+    });
+
+    // Cerrar el menú con la tecla Escape
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && mobileMenu.classList.contains('is-open')) {
+            toggleMenu();
+        }
+    });
+
+    // Cerrar menú si se hace clic fuera (opcional)
+    // mobileMenu.addEventListener('click', (e) => {
+    //    if (e.target === mobileMenu) { // Si se hace clic en el fondo del menú (aside)
+    //       toggleMenu();
+    //    }
+    // });
+
+</script>
 
 </body>
 </html>
