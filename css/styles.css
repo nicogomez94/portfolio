@@ -131,31 +131,31 @@ header {
     align-items: center;
 }
 
-nav ol {
+nav ul {
     display: flex;
     align-items: center;
     list-style: none;
 }
 
-nav ol li {
+nav ul li {
     margin: 0 15px;
     font-family: var(--font-mono);
     font-size: var(--fz-xs);
 }
 
-nav ol li a {
+nav ul li a {
     color: var(--lightest-slate);
     counter-increment: item 1;
     padding: 10px;
 }
 
-nav ol li a::before {
-    content: '0' counter(item) '.';
+nav ul li a::before {
+    content: '.';
     margin-right: 5px;
     color: var(--green);
     font-size: var(--fz-xs);
 }
- nav ol li a:hover {
+ nav ul li a:hover {
     color: var(--green);
  }
 
@@ -473,7 +473,7 @@ section h2 {
 
 section h2::before {
     counter-increment: section;
-    content: '0' counter(section) '.';
+    content: '.';
     position: absolute;
     left: 0;
     top: 5px;
@@ -486,10 +486,10 @@ section h2::before {
     content: '';
     display: block;
     position: relative;
-    top: -10px;
-    width: 200px;
+    top: -5px;
+    width: 500px;
     height: 1px;
-    margin-left: 280px;
+    margin-left: 25px;
     background-color: var(--lightest-navy);
  }
 
