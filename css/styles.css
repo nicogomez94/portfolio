@@ -1210,3 +1210,47 @@ section h2::before {
 body.menu-open {
     overflow: hidden;
 }
+
+/* Botón de cambio de tema */
+.theme-toggle-button {
+    margin-left: 20px;
+    font-size: var(--fz-xs);
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    background-color: var(--light-navy);
+    color: var(--lightest-slate);
+    border: 1px solid var(--lightest-slate);
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+}
+
+.theme-toggle-button:hover {
+    background-color: var(--green);
+    color: var(--dark-navy);
+}
+
+/* Modo claro */
+body.light-mode {
+    background-color: var(--white);
+    color: var(--dark-navy);
+}
+
+body.light-mode a {
+    color: var(--green);
+}
+
+body.light-mode header {
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+}
+
+body.light-mode .button {
+    background-color: var(--dark-navy);
+    color: var(--white);
+    border: 1px solid var(--dark-navy);
+}
+
+body.light-mode .button:hover {
+    background-color: var(--green);
+    color: var(--dark-navy);
+}

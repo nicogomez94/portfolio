@@ -126,4 +126,26 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
+
+
+    //dark mode
+    // Cambia el tema de la página entre claro y oscuro
+    // y guarda la preferencia en localStorage
+    const themeToggleButton = document.getElementById("theme-toggle");
+    const body = document.body;
+
+    // Verifica el tema guardado en localStorage
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme) {
+        body.classList.toggle("light-mode", savedTheme === "light");
+        themeToggleButton.textContent = savedTheme === "light" ? "Dark Mode" : "Light Mode";
+    }
+
+    // Cambia el tema al hacer clic en el botón
+    themeToggleButton.addEventListener("click", () => {
+        const isLightMode = body.classList.toggle("light-mode");
+        themeToggleButton.textContent = isLightMode ? "Dark Mode" : "Light Mode";
+        localStorage.setItem("theme", isLightMode ? "light" : "dark");
+    });
+
 });
