@@ -82,6 +82,29 @@ document.addEventListener("DOMContentLoaded", function() {
         observer.observe(section);
     });
 
+    // Selecciona el header y los aside
+    const elementsToObserve = document.querySelectorAll('header, aside');
+
+    // Configura el Intersection Observer
+    const observerElements = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Agrega la clase para hacer visible el elemento
+                entry.target.classList.add('visible');
+                // Deja de observar el elemento una vez que es visible
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.1 // El porcentaje de visibilidad necesario para activar
+    });
+
+    // Aplica el observer a cada elemento
+    elementsToObserve.forEach(element => {
+        element.classList.add('hidden'); // Asegúrate de que estén ocultos inicialmente
+        observerElements.observe(element);
+    });
+
     const tabs = document.querySelectorAll('.tab-button');
     const panels = document.querySelectorAll('.tab-panel');
     const tabList = document.querySelector('.tab-list');

@@ -246,6 +246,19 @@ body.menu-open .mobile-nav-button-container {
     transform: translateX(0); /* Posición final */
 }
 
+/* Estilo inicial para header y aside ocultos */
+.hidden {
+    opacity: 0;
+    transform: translateY(-50px); /* Barrido desde arriba */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Estilo para header y aside visibles */
+.visible {
+    opacity: 1;
+    transform: translateY(0); /* Posición final */
+}
+
 /* --- Estilos Botón de Cierre (Nuevo) --- */
 .close-menu-button {
     position: absolute;
