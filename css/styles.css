@@ -470,7 +470,7 @@ body.menu-open .mobile-nav-button-container {
 }
 
 #hero h2 {
-    font-size: var(--fz-heading-xl);
+    font-size: var(--fz-heading-md);
     color: var(--slate);
     margin-bottom: 25px;
     line-height: 1.1;
