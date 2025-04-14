@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
 
+    // --- Menú móvil: Abrir y cerrar ---
     const hamburgerButton = document.querySelector('.hamburger-button');
     const closeButton = document.querySelector('.close-menu-button');
     const mobileMenu = document.querySelector('#mobile-menu');
@@ -37,7 +38,9 @@ document.addEventListener("DOMContentLoaded", function() {
             closeMenu();
         }
     });
+    // --- Fin Menú móvil ---
 
+    // --- Intersection Observer: Animaciones al hacer scroll ---
     const sections = document.querySelectorAll('section');
     const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
@@ -71,7 +74,9 @@ document.addEventListener("DOMContentLoaded", function() {
         element.classList.add('hidden');
         observerElements.observe(element);
     });
+    // --- Fin Intersection Observer ---
 
+    // --- Tabs: Navegación entre pestañas ---
     const tabs = document.querySelectorAll('.tab-button');
     const panels = document.querySelectorAll('.tab-panel');
     const tabList = document.querySelector('.tab-list');
@@ -125,12 +130,9 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
     });
+    // --- Fin Tabs ---
 
-
-
-    //dark mode
-    // Cambia el tema de la página entre claro y oscuro
-    // y guarda la preferencia en localStorage
+    // --- Modo oscuro/claro ---
     const themeToggleButton = document.getElementById("theme-toggle");
     const body = document.body;
 
@@ -147,5 +149,6 @@ document.addEventListener("DOMContentLoaded", function() {
         themeToggleButton.textContent = isLightMode ? "Dark Mode" : "Light Mode";
         localStorage.setItem("theme", isLightMode ? "light" : "dark");
     });
+    // --- Fin Modo oscuro/claro ---
 
 });

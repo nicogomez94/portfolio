@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="icon" type="image/png" href="img/favicon.png">
+    <link rel="icon" type="image/png" href="img/favicon2.png">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body style="counter-reset: section 0;">
@@ -19,12 +19,13 @@
     
         <nav class="desktop-nav"> 
             <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#work">Work</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#about">Acerca De</a></li>
+                <li><a href="#experience">Experiencia</a></li>
+                <li><a href="#work">Trabajo</a></li>
+                <li><a href="#contact">Contacto</a></li>
             </ul>
-            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" class="button resume-button">Resume</a>
+            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" class="button resume-button">CV</a>
+            <a href="/index-en.pdf" target="_blank" rel="noopener noreferrer" class="button resume-button lang-button">EN</a>
             <button id="theme-toggle" class="button theme-toggle-button">Dark Mode</button>
         </nav>
     
@@ -48,6 +49,7 @@
                 <li><a href="#contact">Contacto</a></li>
              </ul>
             <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" class="button resume-button">Resume</a>
+            <a href="/index-en.pdf" target="_blank" rel="noopener noreferrer" class="button resume-button lang-button">EN</a>
             <button id="theme-toggle" class="button theme-toggle-button">Dark Mode</button>
         </nav>
     </aside>
@@ -93,14 +95,14 @@
                     <p>Estudié la carrera de <span class="highlight">Licenciatura en Análisis de Sistemas en USAL</span> y trabajé como Full Stack Developer en la <span class="highlight">Universidad de Palermo</span>, manteniendo el CRM, la app móvil y el sitio web.</p>
                     <p>Estas son algunas tecnologías con las que estuve trabajando últimamente:</p>
                     <ul class="skills-list">
-                        <li>PHP</li>
+                        <li>React</li>
                         <li>JavaScript</li>
                         <li>Node.js</li>
-                        <li>React</li>
-                        <li>MySQL</li>
-                        <li>Git</li>
                         <li>HTML & CSS</li>
-                        <li>jQuery</li>
+                        <li>MySQL</li>
+                        <li>PHP</li>
+                        <li>Git</li>
+                        <li>Express</li>
                     </ul>
                 </div>
                 <div class="about-image">
@@ -121,6 +123,9 @@
                     <button id="tab-1" role="tab" aria-selected="true" aria-controls="panel-1" tabindex="0" class="tab-button active">
                         <span>Universidad de Palermo</span>
                     </button>
+                    <button id="tab-2" role="tab" aria-selected="false" aria-controls="panel-2" tabindex="-1" class="tab-button">
+                        <span>Otros Proyectos/Emprendimientos</span>
+                    </button>
                 </div>
         
                 <div class="tab-panels">
@@ -128,9 +133,9 @@
                         <h3><span>Full Stack Developer</span> <span class="company"> Freelance</span></h3>
                         <p class="date">2017 — Actualidad</p>
                         <ul>
-                            <li>Diseño y desarrollo de sitios web para emprendimientos como GG Apartments y BLAK.</li>
-                            <li>Creación de redes sociales propias con funcionalidades avanzadas como Tion y Taggeon.</li>
-                            <li>Implementación de funcionalidades de reservas y pagos online en plataformas como Keramik.</li>
+                            <li>Diseño y desarrollo de sitios web para emprendimientos como GG Apartments y Keramik.</li>
+                            <li>Creación de redes sociales propias con funcionalidades avanzadas (Taggeon).</li>
+                            <li>Implementación de funcionalidades de reservas y pagos online en plataformas como BLAK.</li>
                         </ul>
                     </div>
                     <div id="panel-1" role="tabpanel" tabindex="0" aria-labelledby="tab-1" class="tab-panel active">
@@ -138,8 +143,23 @@
                         <p class="date">2019 — 2022</p>
                         <ul>
                             <li>Mantenimiento y desarrollo de funcionalidades en el CRM de la universidad.</li>
-                            <li>Diseño y actualización de la app móvil institucional.</li>
-                            <li>Gestión del sitio web oficial y optimización de procesos internos.</li>
+                            <li>Diseño y actualización de la web institucional.</li>
+                            <li>Optimización de procesos internos.</li>
+                        </ul>
+                    </div>
+                    <div id="panel-2" role="tabpanel" tabindex="0" aria-labelledby="tab-2" class="tab-panel">
+                        <h3><span>Otros Proyectos/Emprendimientos</span></h3>
+                        <ul>
+                            <li>
+                                <strong>Keramik</strong>, local de detailing de autos<br>
+                                Gestión de proyectos, estrategia digital y Desarrollo de sistemas<br>
+                                <span class="date">2021-2023</span>
+                            </li>
+                            <li>
+                                <strong>G&G Apartments</strong>, sub alquiler de propiedades de alquiler temporario<br>
+                                Gestión de proyectos, estrategia digital y Desarrollo de sistemas<br>
+                                <span class="date">2022-2024</span>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -155,7 +175,7 @@
                     <div class="project-content">
                         <div>
                             <p class="project-overline">Presupuestador + Reservas con Calendario</p>
-                            <h3 class="project-title"><a href="#">BLAK Ploteo</a></h3>
+                            <h3 class="project-title"><a href="https://blak-frontend.onrender.com/">BLAK Ploteo</a></h3>
                             <div class="project-description">
                                 <p>Herramienta integral que permite a los usuarios generar presupuestos personalizados y realizar reservas a través de un calendario interactivo. También cuenta con panel de admin.</p>
                             </div>
@@ -183,7 +203,7 @@
                     <div class="project-content">
                         <div>
                             <p class="project-overline">Red Social</p>
-                            <h3 class="project-title"><a href="#">Taggeon</a></h3>
+                            <h3 class="project-title"><a href="http://vps-4785552-x.dattaweb.com/">Taggeon</a></h3>
                             <div class="project-description">
                                 <p>Red social dinámica inspirada en Instagram, donde los usuarios pueden compartir publicaciones, seguirse entre sí y construir comunidades en torno a intereses comunes.</p>
                             </div>
@@ -209,16 +229,16 @@
                 <li class="project">
                     <div class="project-content">
                         <div>
-                            <p class="project-overline">Landing Page</p>
-                            <h3 class="project-title"><a href="#">Keramik</a></h3>
+                            <p class="project-overline">Landing Page + Catálogo</p>
+                            <h3 class="project-title"><a href="https://keramik.com.ar/">Keramik</a></h3>
                             <div class="project-description">
-                                <p>Página estatica para un local de detailing de autos.</p>
+                                <p>Página estatica con sección de catálogo para un local de detailing de autos.</p>
                             </div>
                             <ul class="project-tech-list">
                                 <li>HTML</li>
                                 <li>CSS</li>
                                 <li>BootStrap</li>
-                                <li>JavaScript</li>
+                                <li>JavaScript/jQuery</li>
                             </ul>
                             <div class="project-links">
                                 <a href="#" aria-label="GitHub Link" target="_blank" rel="noopener noreferrer">
@@ -236,16 +256,16 @@
                 <li class="project">
                     <div class="project-content">
                         <div>
-                            <p class="project-overline">Red Social</p>
-                            <h3 class="project-title"><a href="#">Taggeon</a></h3>
+                            <p class="project-overline">Diseño Web + Carrito</p>
+                            <h3 class="project-title"><a href="https://inesinasolar.com/">Inesina Solar</a></h3>
                             <div class="project-description">
-                                <p>Red social dinámica inspirada en Instagram, donde los usuarios pueden compartir publicaciones, seguirse entre sí y construir comunidades en torno a intereses comunes.</p>
+                                <p>Sitio e-commerce en WordPress para Inesina Solar, con catálogo de productos, blog técnico y portafolio de proyectos.</p>
                             </div>
                             <ul class="project-tech-list">
                                 <li>PHP</li>
                                 <li>JavaScript</li>
                                 <li>MySQL</li>
-                                <li>Mercado Pago SDK</li>
+                                <li>WordPress</li>
                             </ul>
                             <div class="project-links">
                                 <a href="#" aria-label="GitHub Link" target="_blank" rel="noopener noreferrer">
@@ -255,15 +275,15 @@
                         </div>
                     </div>
                     <div class="project-image">
-                        <a href="#">
-                            <img src="img/pngtree-beige-pastel-wave-swirls-abstract-seamless-pattern-picture-image_13491194.jpg" alt="Quiz App Screenshot">
+                        <a href="https://inesinasolar.com/">
+                            <img src="img/inesina.png" alt="Quiz App Screenshot">
                         </a>
                     </div>
                 </li>
   
             </ul>
             <hr>
-            <a href="mailto:nicolasgomez94@gmail.com" class="button contact-button" style="margin-top: 20px;">Ver Más</a>
+            <a href="https://github.com/nicogomez94" class="button contact-button" style="margin-top: 20px;">Ver Más</a>
         </section>
 
         <section id="contact">

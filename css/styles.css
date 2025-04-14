@@ -17,10 +17,10 @@
     --fz-lg: 18px;
     --fz-xl: 20px;
     --fz-xxl: 22px;
-    --fz-heading-sm: 28px;
-    --fz-heading-md: 32px;
-    --fz-heading-lg: clamp(40px, 8vw, 60px);
-    --fz-heading-xl: clamp(45px, 8vw, 70px);
+    --fz-heading-sm: 38px;
+    --fz-heading-md: 42px;
+    --fz-heading-lg: clamp(50px, 8vw, 70px);
+    --fz-heading-xl: clamp(55px, 8vw, 80px);
     --border-radius: 4px;
     --nav-height: 100px;
     --nav-scroll-height: 70px;
@@ -479,7 +479,7 @@ body.menu-open .mobile-nav-button-container {
 }
 
 #hero p {
-    max-width: 540px;
+    max-width: 700px;
     color: var(--slate);
     margin-bottom: 50px;
     font-size: var(--fz-lg);
