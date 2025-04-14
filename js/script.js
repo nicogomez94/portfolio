@@ -133,21 +133,31 @@ document.addEventListener("DOMContentLoaded", function() {
     // --- Fin Tabs ---
 
     // --- Modo oscuro/claro ---
-    const themeToggleButton = document.getElementById("theme-toggle");
+    const themeToggleButtons = document.querySelectorAll(".theme-toggle-button");
     const body = document.body;
 
     // Verifica el tema guardado en localStorage
     const savedTheme = localStorage.getItem("theme");
     if (savedTheme) {
         body.classList.toggle("light-mode", savedTheme === "light");
-        themeToggleButton.textContent = savedTheme === "light" ? "Dark Mode" : "Light Mode";
+        themeToggleButtons.forEach(button => {
+            button.textContent = savedTheme === "light" ? "Dark Mode" : "Light Mode";
+        });
     }
 
-    // Cambia el tema al hacer clic en el botón
-    themeToggleButton.addEventListener("click", () => {
+    // Función para cambiar el tema
+    const toggleTheme = () => {
         const isLightMode = body.classList.toggle("light-mode");
-        themeToggleButton.textContent = isLightMode ? "Dark Mode" : "Light Mode";
+        const buttonText = isLightMode ? "Dark Mode" : "Light Mode";
+        themeToggleButtons.forEach(button => {
+            button.textContent = buttonText;
+        });
         localStorage.setItem("theme", isLightMode ? "light" : "dark");
+    };
+
+    // Agrega el evento de clic a todos los botones
+    themeToggleButtons.forEach(button => {
+        button.addEventListener("click", toggleTheme);
     });
     // --- Fin Modo oscuro/claro ---
 

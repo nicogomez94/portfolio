@@ -21,7 +21,7 @@
             <ul>
                 <li><a href="#about">Acerca De</a></li>
                 <li><a href="#experience">Experiencia</a></li>
-                <li><a href="#work">Trabajo</a></li>
+                <li><a href="#work">Proyectos</a></li>
                 <li><a href="#contact">Contacto</a></li>
             </ul>
             <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" class="button resume-button">CV</a>
@@ -45,12 +45,14 @@
              <ul>
                 <li><a href="#about">Acerca De</a></li>
                 <li><a href="#experience">Experiencia</a></li>
-                <li><a href="#work">Trabajo</a></li>
+                <li><a href="#work">Proyectos</a></li>
                 <li><a href="#contact">Contacto</a></li>
              </ul>
-            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" class="button resume-button">Resume</a>
-            <a href="/index-en.pdf" target="_blank" rel="noopener noreferrer" class="button resume-button lang-button">EN</a>
-            <button id="theme-toggle" class="button theme-toggle-button">Dark Mode</button>
+            <div class="btn-mobile-otros">
+                <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" class="button resume-button">Resume</a>
+                <a href="/index-en.pdf" target="_blank" rel="noopener noreferrer" class="button resume-button lang-button">EN</a>
+                <button id="mobile-theme-toggle" class="button theme-toggle-button">Dark Mode</button>
+            </div>
         </nav>
     </aside>
 
@@ -101,7 +103,7 @@
                         <li>HTML & CSS</li>
                         <li>MySQL</li>
                         <li>PHP</li>
-                        <li>Git</li>
+                        <li>Github Copilot</li>
                         <li>Express</li>
                     </ul>
                 </div>
@@ -114,7 +116,7 @@
         </section>
         
         <section id="experience">
-            <h2>Mi Experiencia</h2>
+            <h2>Mi Experiencia Laboral</h2>
             <div class="experience-tabs">
                 <div class="tab-list" role="tablist" aria-label="Job tabs">
                     <button id="tab-0" role="tab" aria-selected="false" aria-controls="panel-0" tabindex="-1" class="tab-button">
@@ -124,7 +126,7 @@
                         <span>Universidad de Palermo</span>
                     </button>
                     <button id="tab-2" role="tab" aria-selected="false" aria-controls="panel-2" tabindex="-1" class="tab-button">
-                        <span>Otros Proyectos/Emprendimientos</span>
+                        <span>Otros Proyectos</span>
                     </button>
                 </div>
         
@@ -149,14 +151,15 @@
                     </div>
                     <div id="panel-2" role="tabpanel" tabindex="0" aria-labelledby="tab-2" class="tab-panel">
                         <h3><span>Otros Proyectos/Emprendimientos</span></h3>
+                        <p class="date">2019 — 2022</p>
                         <ul>
                             <li>
-                                <strong>Keramik</strong>, local de detailing de autos<br>
+                                <strong>Keramik</strong>, Local de detailing de autos<br>
                                 Gestión de proyectos, estrategia digital y Desarrollo de sistemas<br>
                                 <span class="date">2021-2023</span>
                             </li>
                             <li>
-                                <strong>G&G Apartments</strong>, sub alquiler de propiedades de alquiler temporario<br>
+                                <strong>G&G Apartments</strong>, Sub alquiler de propiedades de alquiler temporario<br>
                                 Gestión de proyectos, estrategia digital y Desarrollo de sistemas<br>
                                 <span class="date">2022-2024</span>
                             </li>
@@ -280,7 +283,33 @@
                         </a>
                     </div>
                 </li>
-  
+                <li class="project">
+                    <div class="project-content">
+                        <div>
+                            <p class="project-overline">Diseño Web + SEO</p>
+                            <h3 class="project-title"><a href="https://zigodev.onrender.com/index.html">Zigo Developers</a></h3>
+                            <div class="project-description">
+                                <p>Página estatica para empresa de soluciones digitales</p>
+                            </div>
+                            <ul class="project-tech-list">
+                                <li>HTML</li>
+                                <li>CSS</li>
+                                <li>BootStrap</li>
+                                <li>JavaScript/jQuery</li>
+                            </ul>
+                            <div class="project-links">
+                                <a href="#" aria-label="GitHub Link" target="_blank" rel="noopener noreferrer">
+                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" width="22" height="22"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-image">
+                        <a href="https://zigodev.onrender.com/index.html">
+                            <img src="img/zigo.png" alt="Quiz App Screenshot">
+                        </a>
+                    </div>
+                </li>
             </ul>
             <hr>
             <a href="https://github.com/nicogomez94" class="button contact-button" style="margin-top: 20px;">Ver Más</a>

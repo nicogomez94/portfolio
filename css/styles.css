@@ -969,6 +969,16 @@ section h2::before {
        mix-blend-mode: normal;
   }
 
+.btn-mobile-otros {
+    display: flex;
+    flex-direction: column;
+    margin-top: 25px;
+}
+.btn-mobile-otros a{
+    margin-top: 10px;
+}
+
+
 /* --- Ajustes Responsivos para Work --- */
   /* --- Ajustes Responsivos para Work (Revisados) --- */
   @media (max-width: 768px) {
@@ -1079,6 +1089,26 @@ section h2::before {
      .project-links a:hover svg {
           fill: var(--green);
      }
+
+    /* Estilos para los botones en dispositivos móviles */
+    .btn-mobile-otros {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centra los botones horizontalmente */
+        gap: 15px; /* Espaciado uniforme entre los botones */
+        margin-top: 25px;
+    }
+
+    .btn-mobile-otros .button {
+        width: 50%; /* Asegura que los botones ocupen todo el ancho disponible */
+        max-width: 300px; /* Ancho máximo para evitar que sean demasiado grandes */
+        padding: 0.8rem 1.5rem; /* Padding uniforme */
+        font-size: var(--fz-sm); /* Tamaño de fuente consistente */
+        text-align: center; /* Centra el texto dentro del botón */
+    }
+    .theme-toggle-button {
+        margin-left: 0 !important;
+    }
 }
 
 /* Ajustes más finos para pantallas muy pequeñas */
@@ -1096,40 +1126,36 @@ section h2::before {
 /* --- Ajustes Responsivos para Experience (Revisados) --- */
 @media (max-width: 600px) {
     .experience-tabs {
-        display: block; /* Cambia a bloque */
-        gap: 0; /* Sin gap en móvil */
+        display: block; /* Cambia a diseño de bloque */
+        gap: 0; /* Elimina el espacio entre lista y panel */
     }
+
     .tab-list {
-        position: relative;
         display: flex;
-        flex-direction: row; /* Fila horizontal */
-        overflow-x: auto; /* Scroll horizontal si no caben */
+        flex-direction: row; /* Cambia a fila horizontal */
+        overflow-x: auto; /* Permite desplazamiento horizontal si no caben */
         width: 100%;
-        margin-bottom: 30px;
-        border-bottom: 1px solid var(--lightest-navy);
-         min-width: auto; /* Ancho automático */
-         flex-shrink: 1; /* Permite encogerse */
+        margin-bottom: 20px; /* Espacio inferior */
+        border-bottom: 1px solid var(--lightest-navy); /* Línea separadora */
     }
+
     .tab-button {
+        flex: 1; /* Asegura que las pestañas ocupen el mismo espacio */
         padding: 10px 15px;
-        border-left: none; /* Sin borde izquierdo */
-        border-bottom: 2px solid transparent; /* Borde inferior para highlight */
-        min-width: 120px; /* Ancho mínimo por tab */
+        border-left: none; /* Elimina el borde izquierdo */
+        border-bottom: 2px solid transparent; /* Borde inferior para resaltar */
         text-align: center; /* Centra el texto */
-        white-space: nowrap; /* Evita salto de línea */
+        white-space: nowrap; /* Evita que el texto se divida en varias líneas */
     }
+
     .tab-button.active {
-         border-bottom-color: var(--green); /* Highlight en borde inferior */
-         border-left-color: transparent; /* Asegura sin borde izquierdo */
+        border-bottom-color: var(--green); /* Resalta la pestaña activa */
     }
-    .tab-highlight {
-         display: none; /* Oculta la barra vertical */
-    }
+
     .tab-panels {
-        padding-left: 0;
+        padding-left: 0; /* Elimina el padding izquierdo */
     }
 }
-
 
 /* --- Ajustes Responsivos para About --- */
 @media (max-width: 768px) {
@@ -1143,6 +1169,12 @@ section h2::before {
     #about .image-wrapper::after {
          top: 10px;
          left: 10px;
+    }
+    body.light-mode .project-overline{
+        color: #ffffff !important; 
+    }
+    .mobile-menu .resume-button, .theme-toggle-button{
+
     }
 }
 @media (max-width: 480px) {
@@ -1173,8 +1205,8 @@ section h2::before {
      header nav { display: none; }
      header .resume-button { margin-left: auto; }
      #hero { align-items: center; text-align: center; }
-     #hero h1 { font-size: clamp(30px, 10vw, 50px); }
-     #hero h2 { font-size: clamp(35px, 10vw, 60px); }
+     #hero h1 { font-size: clamp(30px, 10vw, 70px); }
+     #hero h2 { font-size: clamp(35px, 10vw, 50px); }
      #hero p { max-width: 90%; font-size: var(--fz-md); }
      section { padding: 80px 0; }
      section h2 { padding-left: 0; text-align: center; }
@@ -1234,9 +1266,26 @@ body.light-mode {
     background-color: var(--white);
     color: var(--dark-navy);
 }
-
+body.light-mode h1 {
+    color: var(--green) !important;
+}
+body.light-mode h2 {
+    color: #d55555 !important;
+}
+body.light-mode h3 {
+    color: var(--dark-navy);
+}
 body.light-mode a {
     color: var(--green);
+}
+body.light-mode .project-overline {
+    color: var(--dark-navy);
+}
+body.light-mode .social-buttons a:link{
+    color: var(--dark-navy) !important;
+}
+body.light-mode .greeting{
+    color: var(--dark-navy) !important;
 }
 
 body.light-mode header {
